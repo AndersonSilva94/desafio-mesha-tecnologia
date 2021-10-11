@@ -8,6 +8,7 @@ import store from './redux/store';
 
 ReactDOM.render(
   <Provider store={store}>
+    {console.log(process.env.REACT_APP_WEATHER_KEY)}
     <App />
   </Provider>,
   document.getElementById('root')
