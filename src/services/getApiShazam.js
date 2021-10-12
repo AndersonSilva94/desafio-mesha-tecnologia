@@ -1,8 +1,9 @@
 require('dotenv').config();
 
-export const getApiShazam = async (temp) => {
-  const apiKey = process.env.REACT_APP_API_SHAZAM
-  const apiHost = process.env.REACT_APP_HOST_SHAZAM
+export const getApiShazam = async (temperature) => {
+  const apiKey = process.env.REACT_APP_API_SHAZAM;
+  const apiHost = process.env.REACT_APP_HOST_SHAZAM;
+  const temp = Math.round(temperature - 272.15);
   // console.log(apiKey, apiHost)
   // console.log(process.env)
   let genre = '';
@@ -26,5 +27,5 @@ export const getApiShazam = async (temp) => {
     }
   );
   const responseApi = fetchApi.json();
-  return responseApi;
+  return { tracks: { ...responseApi.tracks }, genre };
 }
