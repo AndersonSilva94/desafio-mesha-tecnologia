@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 export const DivText = styled.div`
     ${() => css`
         display: flex;
+        justify-content: center;
     `}
 `;
 
