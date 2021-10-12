@@ -8,20 +8,20 @@ function InfoText() {
 
   useEffect(() => {
     if(climate.main){
-        setTemperature(climate.main.temp)
+      setTemperature(climate.main.temp)
     }
   }, [climate])
 
-    return (
-        <>
-            <DivText>
-                {temperature 
-                    ? <Text>{Math.round(temperature - 272.15)}°C</Text> 
-                    : <Text>Digite uma cidade</Text>
-                }  
-            </DivText>  
-        </>
-    );
+  return (
+    <>
+      <DivText>
+        {temperature 
+          ? <Text>{Math.round(temperature - 272.15)}°C</Text> 
+          : <Text>Digite uma cidade</Text>
+        }  
+      </DivText>  
+    </>
+  );
 }
 
 export default InfoText;

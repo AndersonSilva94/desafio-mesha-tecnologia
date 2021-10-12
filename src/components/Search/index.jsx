@@ -4,6 +4,7 @@ import { getApiWeather } from '../../services/getApiWeather';
 import { ButtonSearch, Container, InputSearch } from './styles';
 
 import { setWeather } from '../../redux/actions/climate';
+import { getDate } from '../../utils/getDate';
 
 function Search() {
   const dispatch = useDispatch();
@@ -12,16 +13,18 @@ function Search() {
   const handleKeyPress = async (e) => {
     if (e.key === 'Enter') {
       if (local) {
+        const date = getDate();
         const fetchLocal = await getApiWeather(local);
-        dispatch(setWeather(fetchLocal));
+        dispatch(setWeather({ ...fetchLocal, date }));
       }
     }
   }
 
   const handleClick = async () => {
     if (local) {
+      const date = getDate();
       const fetchLocal = await getApiWeather(local);
-      dispatch(setWeather(fetchLocal));
+      dispatch(setWeather({ ...fetchLocal, date }));
     }
   }
 
