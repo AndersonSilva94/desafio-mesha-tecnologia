@@ -16,6 +16,8 @@ export const setWeatherThunk = (local) => (dispatch) => {
   getApiWeather(local)
     .then((res) => {
       const date = getDate();
-      dispatch(setWeather({ ...res, date }));
+      const { main: { temp } } = res;
+      const temperature = Math.round(temp - 272.15)
+      dispatch(setWeather({ ...res, date, temperature }));
     })
 }

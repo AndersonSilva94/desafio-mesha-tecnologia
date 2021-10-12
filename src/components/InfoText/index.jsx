@@ -3,20 +3,20 @@ import { useSelector } from 'react-redux';
 import { DivText, Text } from './styles';
 
 function InfoText() {
-  const [temperature, setTemperature] = useState('');
+  const [temp, setTemp] = useState('');
   const { climate } = useSelector((state) => state.climate);
 
   useEffect(() => {
-    if(climate.main){
-      setTemperature(climate.main.temp)
+    if(climate.temperature){
+      setTemp(climate.temperature)
     }
   }, [climate])
 
   return (
     <>
       <DivText>
-        {temperature 
-          ? <Text>{Math.round(temperature - 272.15)}°C</Text> 
+        {temp 
+          ? <Text>{temp}°C</Text> 
           : <Text>Digite uma cidade</Text>
         }  
       </DivText>  
