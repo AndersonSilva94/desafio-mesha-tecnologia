@@ -1,1 +1,2 @@
+export const SET_CLIMATE_LOADING = 'SET_CLIMATE_LOADING';
 export const SET_CLIMATE = 'SET_CLIMATE';

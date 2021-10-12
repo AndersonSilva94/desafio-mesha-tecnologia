@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch} from 'react-redux';
-import { getApiWeather } from '../../services/getApiWeather';
 import { ButtonSearch, Container, InputSearch } from './styles';
 
-import { setWeather } from '../../redux/actions/climate';
-import { getDate } from '../../utils/getDate';
+import { setWeatherThunk } from '../../redux/actions/climate';
 
 function Search() {
   const dispatch = useDispatch();
@@ -13,18 +11,14 @@ function Search() {
   const handleKeyPress = async (e) => {
     if (e.key === 'Enter') {
       if (local) {
-        const date = getDate();
-        const fetchLocal = await getApiWeather(local);
-        dispatch(setWeather({ ...fetchLocal, date }));
+        await dispatch(setWeatherThunk(local))
       }
     }
   }
 
   const handleClick = async () => {
     if (local) {
-      const date = getDate();
-      const fetchLocal = await getApiWeather(local);
-      dispatch(setWeather({ ...fetchLocal, date }));
+      await dispatch(setWeatherThunk(local))
     }
   }
 
