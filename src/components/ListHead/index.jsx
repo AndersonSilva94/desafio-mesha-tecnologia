@@ -7,7 +7,7 @@ function ListHead() {
       <Tr>
         <Th>Title</Th>
         <Th>Artist</Th>
-        <Th>Preview</Th>
+        {/* <Th>Preview</Th> */}
         <Th>Cover Image</Th>
       </Tr>  
     </Thead>

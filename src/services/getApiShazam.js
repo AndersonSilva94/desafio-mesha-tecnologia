@@ -25,6 +25,6 @@ export const getApiShazam = async (temp) => {
       }
     }
   );
-  const responseApi = fetchApi.json();
+  const responseApi = await fetchApi.json();
   return { tracks: { ...responseApi.tracks }, genre };
 }

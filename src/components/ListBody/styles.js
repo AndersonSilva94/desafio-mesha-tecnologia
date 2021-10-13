@@ -9,5 +9,10 @@ export const Tr = styled.tr`
 `
 
 export const Td = styled.td`
-  ${() => css``}
+  ${() => css`
+  
+  > img {
+    width: 50%;
+  }
+  `}
 `;
