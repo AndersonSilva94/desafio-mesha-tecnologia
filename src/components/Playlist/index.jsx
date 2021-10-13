@@ -12,7 +12,8 @@ function Playlist() {
       const { name, date, temperature } = climate;
       const { tracks, genre } = playlist
       const playlists = JSON.parse(localStorage.getItem('playlists') || '[]');
-      playlists.push({ name, date, temperature, tracks, genre });
+      const id = playlists.length + 1;
+      playlists.push({ name, date, temperature, tracks, genre, id });
       localStorage.setItem('playlists', JSON.stringify(playlists));
     }
   }

@@ -10,8 +10,9 @@ export const setPlaylist = (payload) => ({
   payload
 });
 
-export const setPlaylistThunk = (temp) => (dispatch) => {
+export const setPlaylistThunk = (temp) => async (dispatch) => {
   dispatch(setPlaylistLoading());
-  getApiShazam(temp)
-    .then((res) => dispatch(setPlaylist(res)))
+  const apiResults = await getApiShazam(temp)
+  const results = await dispatch(setPlaylist(apiResults));
+  return results;
 };

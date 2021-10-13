@@ -12,7 +12,7 @@ export const Td = styled.td`
   ${() => css`
   
   > img {
-    width: 50%;
+    width: 30%;
   }
   `}
 `;

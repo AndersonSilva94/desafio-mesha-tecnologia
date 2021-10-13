@@ -11,13 +11,12 @@ export const setWeather = (climate) => ({
   payload: climate
 });
 
-export const setWeatherThunk = (local) => (dispatch) => {
+export const setWeatherThunk = (local) => async (dispatch) => {
   dispatch(setWeatherLoading());
-  getApiWeather(local)
-    .then((res) => {
-      const date = getDate();
-      const { main: { temp } } = res;
-      const temperature = Math.round(temp - 272.15)
-      dispatch(setWeather({ ...res, date, temperature }));
-    })
+  const apiResults = await getApiWeather(local);
+  const date = getDate();
+  const { main: { temp } } = apiResults;
+  const temperature = Math.round(temp - 272.15);
+  const dispatchResults = await dispatch(setWeather({ ...apiResults, date, temperature }));
+  return dispatchResults;
 }
