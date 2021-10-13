@@ -14,7 +14,9 @@ export const getApiShazam = async (temp) => {
   if (temp >= 32) genre = 'rock';
   // console.log(genre)
 
-  const url = `https://shazam.p.rapidapi.com/search?term=${genre}&offset=0&limit=5`;
+  const randomOffset = Math.round(Math.random() * 50)
+
+  const url = `https://shazam.p.rapidapi.com/search?term=${genre}&offset=${randomOffset}&limit=5`;
 
   const fetchApi = await fetch(url,
     {
