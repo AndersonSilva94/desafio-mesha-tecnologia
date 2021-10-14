@@ -11,14 +11,16 @@ function Search() {
   const handleKeyPress = async (e) => {
     if (e.key === 'Enter') {
       if (local) {
-        await dispatch(setWeatherThunk(local))
+        await dispatch(setWeatherThunk(local));
+        setLocal('');
       }
     }
   }
 
   const handleClick = async () => {
     if (local) {
-      await dispatch(setWeatherThunk(local))
+      await dispatch(setWeatherThunk(local));
+      setLocal('');
     }
   }
 

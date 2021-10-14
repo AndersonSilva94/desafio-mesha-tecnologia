@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SaveList from '../../components/SaveList';
 
 function Playlists() {
   return (
     <div>
-      You're here!
+      <SaveList />
       <Link to="/">Go to home</Link>
     </div>
   );
