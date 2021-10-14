@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Desafio Mesha Tecnologia :partly_sunny:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Projeto desenvolvido durante o processo seletivo da Mesha Tecnologia
 
-## Available Scripts
+## Tecnologias utilizadas na construção do projeto
+- React
+- Redux
+- Styled Components
+- Context API
+- React Hooks
+- React-Switch
+- React-router-dom
 
-In the project directory, you can run:
+## Para rodar o projeto localmente:
+1. Clone o repositório
+  * `git clone git@github.com:AndersonSilva94/desafio-mesha-tecnologia.git`.
+  * Entre na pasta do repositório que você acabou de clonar:
+    * `cd desafio-mesha-tecnologia`
 
-### `npm start`
+2. Instale as dependências:
+  * `npm install`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Você precisará de três variáveis de ambiente
+  * Primaramente, crie um arquivo `.env` na raiz do projeto;
+  * Em seguida entre nos seguintes links e siga os passos para criar um usuário:
+    * `https://openweathermap.org/current`
+    * `https://rapidapi.com/apidojo/api/shazam`
+  * Após a criação, é só buscar as chaves da api de cada servidor e host do shazam
+  * No arquivo `.env`, crie os arquivos, concatenando com as informações encontradas:
+    * `REACT_APP_API_KEY=[apiKeyWeather]` 
+    * `REACT_APP_API_SHAZAM=[apiKeyShazam]` 
+    * `REACT_APP_HOST_SHAZAM=[hostShazam]`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  4. Rode a aplicação:
+   * `npm start` 
 
-### `npm test`
+## Objetivo:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Consumo de API externas, à partir de documentação
+- Salvar as informações somente no storage do navegador (Não utilizar backend e/ou banco de dados)
+- Estrutura de projeto (Componentes, etc)
+- O projeto deve ser feito em REACT
 
-### `npm run build`
+## Descrição do projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Dada uma localização (Cidade, latitude, longitude, etc) a aplicação deverá buscar na API de tempo (Weather API ou afins) a temperatura relativa da localização e assim que retornada a resposta deverá ser solicitada para à API de músicas (Shazam API ou afins) a lista de músicas recomendadas para o clima atual.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Caso a temperatura seja maior que 32 graus, deverá retornar Rock;
+- Caso a temperatura seja menor que 32 e maior 24, deverá retornar Pop;
+- Caso a temperatura seja menor que 24 e maior que 16, devera retornar Classica;
+- E caso a temperatura seja menor que 16, deverá retornar Lofi.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Assim que retornado à lista de música, caso seja do agrado da pessoa, poderá ser salva no storage do navegador com a data de busca, a lista de músicas, à temperatura, à cidade e a categoria das músicas.
 
-### `npm run eject`
+Deverá haver uma página mostrando a listagem das músicas por data salva no storage.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+As listas podem ser deletadas.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+:keyboard: com :purple_heart: por [Anderson Silva (Andy)](https://www.linkedin.com/in/andssilva/) 😊
