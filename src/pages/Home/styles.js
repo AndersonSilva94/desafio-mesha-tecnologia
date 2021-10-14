@@ -1,13 +1,30 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const Wrapper = styled.div`
+  ${({ theme }) => css`
+    width: 100vw;
+    height: 100vh;
+    background-color: ${theme.colors.background};
+  `}
+`;
+
 export const Container = styled.div`
   ${({ theme }) => css`
     font-family: ${theme.font.family.poppins};
+    background-color: ${theme.colors.background};
     padding: ${theme.spacings.xsmall};
     display: flex;
     flex-direction: column;
     align-items: center;
+  `}
+`;
+
+export const Toggle = styled.div`
+  ${() => css`
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;
   `}
 `;
 

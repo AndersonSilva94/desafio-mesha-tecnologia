@@ -1,11 +1,11 @@
 /* eslint-disable */
 export default {
+  title: 'dark',
   colors: {
-    primary: '#A579C7',
-    secondary: '#4200A1',
-    background: '#FFF',
-    text: '#1A1A1A',
-    border: '#E5E5E5',
+    primary: '#7D5C96',
+    secondary: '#A579C7',
+    background: '#1A1A1A',
+    text: '#FFF',
     offColor: '#391866',
   },
   font: {

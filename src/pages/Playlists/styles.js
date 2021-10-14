@@ -7,12 +7,30 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     font-family: ${theme.font.family.poppins};
+    background-color: ${theme.colors.background};
+  `}
+`;
+
+export const Wrapper = styled.div`
+  ${({ theme }) => css`
+    width: 100vw;
+    height: 100vh;
+    background-color: ${theme.colors.background};
   `}
 `;
 
 export const Text = styled.h1`
   ${({ theme }) => css`
     color: ${theme.colors.text};
+  `}
+`;
+
+export const Toggle = styled.div`
+  ${({theme}) => css`
+    margin-top: ${theme.spacings.xsmall};
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;
   `}
 `;
 
