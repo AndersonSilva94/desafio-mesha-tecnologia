@@ -1,22 +1,25 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.section`
-  ${() => css`
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
+export const Title = styled.h1`
+  ${({ theme }) => css`
+    color: ${theme.colors.black};
   `}
 `;
 
-export const Title = styled.h1`
-`;
-
 export const Button = styled.button`
-  ${() => css`
-    padding: 15px 10px;
+  ${({ theme }) => css`
+    padding: ${theme.spacings.small};
+    border: 1px solid ${theme.colors.background};
     border-radius: 5px;
-    width: 50%;
-    margin: 0 auto;
+    color: ${theme.colors.background};
+    background-color: ${theme.colors.secondary};
+    cursor: pointer;
+    margin-top: ${theme.spacings.small};
+
+    :hover {
+      background-color: ${theme.colors.background};
+      border: 1px solid ${theme.colors.secondary};
+      color: ${theme.colors.secondary};
+    }
   `}
 `;

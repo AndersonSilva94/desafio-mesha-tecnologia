@@ -8,7 +8,7 @@ export const DivText = styled.div`
 `;
 
 export const Text = styled.h1`
-  ${() => css`
-    font-size: 30px;
+  ${({ theme }) => css`
+    color: ${theme.colors.text};
   `}
 `;

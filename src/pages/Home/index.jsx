@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import InfoText from '../../components/InfoText';
 import Playlist from '../../components/Playlist';
 import Search from '../../components/Search';
+import { Container, LinkSaved } from './styles';
 
 function Home() {
   return (
-    <div>
+    <Container>
       <Search />
       <InfoText />
       <Playlist />
-      <Link to="/playlists" >See saved playlists</Link>
-    </div>
+      <LinkSaved to="/playlists">See saved playlists</LinkSaved>
+    </Container>
   );
 }
 

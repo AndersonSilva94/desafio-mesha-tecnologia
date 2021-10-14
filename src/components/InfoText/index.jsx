@@ -10,8 +10,8 @@ function InfoText() {
     <>
       <DivText>
         {playlist.tracks
-          ? <Text>{climate.temperature}°C</Text> 
-          : <Text>Digite uma cidade</Text>
+          ? <Text>Current temperature in {climate.name}: {climate.temperature}°C</Text> 
+          : <Text>Search a city</Text>
         }  
       </DivText>  
     </>

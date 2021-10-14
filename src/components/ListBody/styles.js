@@ -9,10 +9,11 @@ export const Tr = styled.tr`
 `
 
 export const Td = styled.td`
-  ${() => css`
-  
+  ${({ theme }) => css`
+    padding-top: ${theme.spacings.xsmall};
+
   > img {
-    width: 30%;
+    width: 20%;
   }
   `}
 `;

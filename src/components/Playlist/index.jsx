@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setPlaylistThunk } from '../../redux/actions/playlist';
 import List from '../List';
-import { Button, Container, Title } from './styles';
+import { Button, Title } from './styles';
 
 function Playlist() {
   const dispatch = useDispatch()
@@ -29,11 +29,11 @@ function Playlist() {
   }
 
   const renderPlaylist = () => (
-    <Container>
+    <>
       <Title>Here's a playlist for you</Title>
       <List/>
       <Button onClick={savePlaylist} >Save</Button>
-    </Container>
+    </>
   );
 
   return (

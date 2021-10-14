@@ -9,5 +9,8 @@ export const Tr = styled.tr`
 `
 
 export const Th = styled.th`
-  ${() => css``}
+  ${({ theme }) => css`
+    border-bottom: 1px solid ${theme.colors.black};
+    padding-bottom: ${theme.spacings.small}
+  `}
 `;

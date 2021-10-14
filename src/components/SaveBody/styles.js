@@ -9,10 +9,25 @@ export const Tr = styled.tr`
 `
 
 export const Td = styled.td`
-  ${() => css`
-  
-  > img {
-    width: 30%;
-  }
+  ${({ theme }) => css`
+    padding: ${theme.spacings.xsmall};
+
+  `}
+`;
+
+export const ButtonDelete = styled.button`
+  ${({ theme }) => css`
+    font-family: ${theme.font.family.poppins};
+    padding: ${theme.spacings.small};
+    border: none;
+    border-radius: 5px;
+    color: ${theme.colors.background};
+    background-color: ${theme.colors.secondary};
+    cursor: pointer;
+
+    :hover {
+      background-color: ${theme.colors.background};
+      color: ${theme.colors.secondary};
+    }
   `}
 `;

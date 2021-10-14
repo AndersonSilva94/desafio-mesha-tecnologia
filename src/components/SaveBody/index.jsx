@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Td, Tbody, Tr } from './styles';
+import { Td, Tbody, Tr, ButtonDelete } from './styles';
 
 function SaveBody() {
   const [arrPlaylist, setArrPlaylist] = useState();
@@ -37,7 +37,7 @@ function SaveBody() {
                 </ul>
               </Td>
               <Td>
-                <button onClick={() => deletePlaylist(el)}>Delete</button>
+                <ButtonDelete onClick={() => deletePlaylist(el)}>Delete</ButtonDelete>
               </Td>
             </Tr> 
           ))

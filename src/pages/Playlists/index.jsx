@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import SaveList from '../../components/SaveList';
 import { setWeather } from '../../redux/actions/climate';
 import { setPlaylist } from '../../redux/actions/playlist';
+import { Container, LinkBack, Text } from './styles';
 
 function Playlists() {
   const dispatch = useDispatch();
@@ -14,10 +14,11 @@ function Playlists() {
   }
 
   return (
-    <div>
+    <Container>
+      <Text>Saved Playlists</Text>
       <SaveList />
-      <Link to="/" onClick={ clearWeatherState }>Go to home</Link>
-    </div>
+      <LinkBack to="/" onClick={ clearWeatherState }>Go to home</LinkBack>
+    </Container>
   );
 }
 
