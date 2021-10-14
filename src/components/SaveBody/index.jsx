@@ -10,7 +10,7 @@ function SaveBody() {
       setArrPlaylist(playlists);
     }
     getPlaylist();
-  }, [arrPlaylist])
+  }, [])
 
   const deletePlaylist = ({ id }) => {
     const favoritePlaylists = JSON.parse(localStorage.getItem('playlists'))

@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { DivText, Text } from './styles';
 
 function InfoText() {
-  const [temp, setTemp] = useState('');
   const { climate } = useSelector((state) => state.climate);
-
-  useEffect(() => {
-    if(climate.temperature){
-      setTemp(climate.temperature)
-    }
-  }, [climate])
+  const { playlist } = useSelector((state) => state.playlist)
 
   return (
     <>
       <DivText>
-        {temp 
-          ? <Text>{temp}°C</Text> 
+        {playlist.tracks
+          ? <Text>{climate.temperature}°C</Text> 
           : <Text>Digite uma cidade</Text>
         }  
       </DivText>  

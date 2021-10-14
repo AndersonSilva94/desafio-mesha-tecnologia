@@ -15,8 +15,10 @@ export const setWeatherThunk = (local) => async (dispatch) => {
   dispatch(setWeatherLoading());
   const apiResults = await getApiWeather(local);
   const date = getDate();
-  const { main: { temp } } = apiResults;
-  const temperature = Math.round(temp - 272.15);
-  const dispatchResults = await dispatch(setWeather({ ...apiResults, date, temperature }));
-  return dispatchResults;
+  if (apiResults.cod === 200) {
+    const { main: { temp } } = apiResults;
+    const temperature = Math.round(temp - 272.15);
+    const dispatchResults = await dispatch(setWeather({ ...apiResults, date, temperature }));
+    return dispatchResults;
+  }
 }
