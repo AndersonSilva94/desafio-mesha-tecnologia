@@ -15,3 +15,13 @@ export const Container = styled.table`
     }
   `}
 `;
+
+export const NoPlaylists = styled.div`
+  ${({ theme }) => css`
+    font-family: ${theme.font.family.poppins};
+    padding: ${theme.spacings.small};
+    color: ${theme.colors.background};
+    background-color: ${theme.colors.secondary};
+    margin: ${theme.spacings.medium} 0;
+  `}
+`
