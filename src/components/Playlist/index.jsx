@@ -7,8 +7,8 @@ import { Button, Title } from './styles';
 
 function Playlist() {
   const dispatch = useDispatch()
-  const { climate } = useSelector((state) => state.climate);
-  const { playlist } = useSelector((state) => state.playlist);
+  const { climate, loadingWeather } = useSelector((state) => state.climate);
+  const { playlist, loadingPlaylist } = useSelector((state) => state.playlist);
   const { temperature, cod } = climate;
 
   useEffect(() => {
@@ -20,10 +20,10 @@ function Playlist() {
   const savePlaylist = () => {
     if (playlist) {
       const { name, date, temperature } = climate;
-      const { tracks, genre } = playlist
+      const { songs } = playlist;
       const playlists = JSON.parse(localStorage.getItem('playlists') || '[]');
       const id = playlists.length > 0 ? playlists[playlists.length - 1].id + 1 : 1;
-      playlists.push({ name, date, temperature, tracks, genre, id });
+      playlists.push({ name, date, temperature, songs, id });
       localStorage.setItem('playlists', JSON.stringify(playlists));
     }
   }
@@ -38,7 +38,7 @@ function Playlist() {
 
   return (
     <>
-      {playlist.tracks && renderPlaylist()}
+      {playlist.songs && !loadingPlaylist && !loadingWeather && renderPlaylist()}
     </>
   );
 }

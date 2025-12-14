@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 export const getApiShazam = async (temp) => {
   const apiKey = process.env.REACT_APP_API_SHAZAM;
   const apiHost = process.env.REACT_APP_HOST_SHAZAM;
@@ -12,7 +10,7 @@ export const getApiShazam = async (temp) => {
 
   const randomOffset = Math.round(Math.random() * 50)
 
-  const url = `https://shazam.p.rapidapi.com/search?term=${genre}&offset=${randomOffset}&limit=5`;
+  const url = `https://shazam.p.rapidapi.com/v2/search?term=${genre}&offset=${randomOffset}&limit=5`;
 
  try {
   const fetchApi = await fetch(url,
@@ -25,7 +23,7 @@ export const getApiShazam = async (temp) => {
     }
   );
   const responseApi = await fetchApi.json();
-  return { tracks: { ...responseApi.tracks }, genre };
+  return responseApi;
  } catch (err) {
    console.log(err);
  }

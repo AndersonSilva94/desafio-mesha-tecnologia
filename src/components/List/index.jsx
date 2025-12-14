@@ -16,7 +16,7 @@ function List() {
   
   return (
     <>
-      { playlist.tracks && renderTable() }
+      { playlist.songs && renderTable() }
     </>
   );
 }
