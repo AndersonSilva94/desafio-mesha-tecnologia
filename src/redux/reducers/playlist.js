@@ -10,7 +10,7 @@ const playlist = (state = INITIAL_STATE, action) => {
     case SET_PLAYLIST_LOADING:
       return { ...state, loadingPlaylist: true };
     case SET_PLAYLIST:
-      return { ...state, playlist: { ...action.payload }, loadingPlaylist: false };
+      return { ...state, playlist: { ...action.payload.results }, loadingPlaylist: false };
     default:
       return state;
   }
