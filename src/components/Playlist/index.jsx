@@ -38,7 +38,7 @@ function Playlist() {
 
   return (
     <>
-      {playlist.tracks && renderPlaylist()}
+      {playlist.songs && renderPlaylist()}
     </>
   );
 }

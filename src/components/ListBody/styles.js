@@ -11,9 +11,5 @@ export const Tr = styled.tr`
 export const Td = styled.td`
   ${({ theme }) => css`
     padding-top: ${theme.spacings.xsmall};
-
-  > img {
-    width: 20%;
-  }
   `}
 `;

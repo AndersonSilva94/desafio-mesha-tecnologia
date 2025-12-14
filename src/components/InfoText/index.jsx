@@ -11,7 +11,7 @@ function InfoText() {
     <>
       {loadingWeather || loadingPlaylist ? <Loading /> : (
         <DivText>
-          {playlist.tracks
+          {playlist.songs
             ? <Text>Current temperature in {climate.name}: {climate.temperature}°C</Text> 
             : <Text>Search a city</Text>
           }  
