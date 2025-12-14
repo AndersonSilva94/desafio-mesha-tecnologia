@@ -29,9 +29,9 @@ function SaveBody() {
               <Td>{ el.genre }</Td>
               <Td>
                 <ul>
-                  { el.tracks.hits.map(({ track }) => (
-                    <li key={ track.key }>
-                      { track.title } - { track.subtitle }
+                  { el.songs.data.map((track) => (
+                    <li key={ track.id }>
+                      { track.attributes.name } - { track.attributes.artistName }
                     </li>
                   )) }
                 </ul>
