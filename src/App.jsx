@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Routes } from 'react-router';
 import { ThemeProvider } from 'styled-components';
 import Home from './pages/Home';
 import Playlists from './pages/Playlists';
@@ -16,10 +16,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Switch>
-        <Route exact path="/"  render={ () => <Home toggleTheme={toggleTheme} /> } />
-        <Route exact path="/playlists" render={ () => <Playlists toggleTheme={toggleTheme} /> } />
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={<Home toggleTheme={toggleTheme} />} />
+        <Route exact path="/playlists" element={<Playlists toggleTheme={toggleTheme} />} />
+      </Routes>
     </ThemeProvider>
   );
 }
