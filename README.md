@@ -3,6 +3,7 @@
 ## Projeto desenvolvido durante o processo seletivo da Mesha Tecnologia
 
 ## Tecnologias utilizadas na construção do projeto
+- Vite
 - React
 - Redux
 - Styled Components
@@ -26,10 +27,10 @@
     * `https://openweathermap.org/current`
     * `https://rapidapi.com/apidojo/api/shazam`
   * Após a criação, é só buscar as chaves da api de cada servidor e host do shazam
-  * No arquivo `.env`, crie os arquivos, concatenando com as informações encontradas:
-    * `REACT_APP_API_KEY=[apiKeyWeather]` 
-    * `REACT_APP_API_SHAZAM=[apiKeyShazam]` 
-    * `REACT_APP_HOST_SHAZAM=[hostShazam]`
+  * No arquivo `.env`, defina as variáveis (prefixo exigido pelo Vite):
+    * `VITE_API_KEY=[apiKeyWeather]`
+    * `VITE_API_SHAZAM=[apiKeyShazam]`
+    * `VITE_HOST_SHAZAM=[hostShazam]`
 
   4. Rode a aplicação:
    * `npm start` 
