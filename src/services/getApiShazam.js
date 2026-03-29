@@ -1,6 +1,6 @@
 export const getApiShazam = async (temp) => {
-  const apiKey = process.env.REACT_APP_API_SHAZAM;
-  const apiHost = process.env.REACT_APP_HOST_SHAZAM;
+  const apiKey = import.meta.env.VITE_API_SHAZAM;
+  const apiHost = import.meta.env.VITE_HOST_SHAZAM;
   let genre = '';
   
   if (temp < 16) genre = 'lofi';
